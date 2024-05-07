@@ -1,59 +1,76 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+  <title>Home</title>
+  <meta name="samsite" content="Svelte demo app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+  <div class="about-container">
+    <p>Hi, <span class="about text">I'm Sam</span></p>
+  </div>
 
-		to your new<br />SvelteKit app
-	</h1>
+  <div class="code-container">
+    <p class="code text half">write code</p>
+  </div>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+  <div class="photos-container">
+    <p class="photos text half">take photos</p>
+  </div>
 
-	<Counter />
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+  section {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    font-size: 3rem;
+  }
 
-	h1 {
-		width: 100%;
-	}
+  section > div {
+    background-color: #fefefe;
+    text-align: center;
+    height: 100%;
+    position: relative;
+  }
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+  div > p {
+    margin: auto;
+  }
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+  .about-container {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-dir: row;
+    justify-content: center;
+  }
+
+  .about-container > p {
+    width: 100%;
+  }
+
+  .code-container {
+    grid-column: 1 / 2;
+  }
+
+  .photos-container {
+    grid-column: 2 / 3;
+  }
+
+
+  .half {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 50%;
+  }
+
 </style>
+
+
