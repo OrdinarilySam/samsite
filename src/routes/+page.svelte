@@ -9,8 +9,6 @@
   const blinkTransition = 0.15;
 
 	let aboutDiv: HTMLElement;
-	let codeDiv: HTMLElement;
-	let photosDiv: HTMLElement;
   let timeout: number = NaN;
 
 	let isVisible: boolean;
@@ -38,20 +36,20 @@
 	function handleEnter(event: MouseEvent, fromLeft: number) {
 		if (event == null || event.target == null) return;
 		const target = event.target as HTMLElement;
-		const height = target.offsetHeight;
-		const width = target.offsetWidth;
-		const x = target.offsetLeft + width * fromLeft;
-		const y = target.offsetTop + height / 2;
-		moveCursor(x, y);
+    calculatePosition(target, fromLeft);
 	}
 
+  function calculatePosition(target: HTMLElement, fromLeft: number) {
+    const width = target.offsetWidth;
+    const height = target.offsetHeight;
+    const x = target.offsetLeft + width * fromLeft;
+    const y = target.offsetTop + height / 2;
+    moveCursor(x, y);
+  }
+
 	onMount(() => {
-		let height = aboutDiv.offsetHeight;
-		let width = aboutDiv.offsetWidth;
-		let y = aboutDiv.offsetTop + height / 2;
-		let x = aboutDiv.offsetLeft + width / 2;
-		moveCursor(x, y);
-		isRunning = true;
+    calculatePosition(aboutDiv, fullPos);
+    isRunning = false;
 	});
 
 	setInterval(() => {
@@ -77,7 +75,6 @@
 
 	<a
 		class="code-container"
-		bind:this={codeDiv}
 		on:mouseenter={(event) => handleEnter(event, halfPos)}
     href="/code"
 	>
@@ -86,7 +83,6 @@
 
 	<a
 		class="photos-container"
-		bind:this={photosDiv}
 		on:mouseenter={(event) => handleEnter(event, halfPos)}
     href="/photos"
 	>
