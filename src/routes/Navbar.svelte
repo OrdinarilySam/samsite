@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
-    padding: 0.5em;
+    padding: 0.5rem;
     padding-bottom: 0;
     position: relative; 
   }
@@ -41,14 +41,18 @@
   a {
     text-decoration: none;
     color: black;
-    padding: 1.5em;
+    padding: 0.7rem;
     border: 1px solid black;
     width: 100%;
     height: 100%;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
     background-color: var(--color-manila);
+    font-family: var(--font-nav);
+    font-size: 2rem;
     position: relative;
+    line-height: 1em;
+    color: rgba(0.1, 0.1, 0.1, 0.7);
   }
 
   .active {
@@ -58,14 +62,14 @@
 
   .left {
     box-shadow: 
-      inset 0.5em -0.1em 5px 0px rgba(0, 0, 0, 0.1),
-      inset 0 -0.2em 5px 0px rgba(0, 0, 0, 0.1);
+      inset 0.5rem -0.1rem 5px 0px rgba(0, 0, 0, 0.1),
+      inset 0 -0.2rem 5px 0px rgba(0, 0, 0, 0.1);
   }
 
   .right {
     box-shadow: 
-      inset -0.5em -0.1em 5px 0px rgba(0, 0, 0, 0.1),
-      inset 0 -0.2em 5px 0px rgba(0, 0, 0, 0.1);
+      inset -0.5rem -0.1rem 5px 0px rgba(0, 0, 0, 0.1),
+      inset 0 -0.2rem 5px 0px rgba(0, 0, 0, 0.1);
   }
 
 </style>
