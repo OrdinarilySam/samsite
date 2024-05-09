@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+  import Postit from './Postit.svelte';
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
@@ -74,11 +75,11 @@
 	</a>
 
 	<a class="code-container" on:mouseenter={(event) => handleEnter(event, halfPos)} href="/code">
-		<p>Write Code</p>
+    <Postit message="Write Code" rotation="7deg" />
 	</a>
 
 	<a class="photos-container" on:mouseenter={(event) => handleEnter(event, halfPos)} href="/photos">
-		<p>Take Photos</p>
+    <Postit message="Take Photos" rotation="-4deg" />
 	</a>
 	<Icon
 		icon="mdi:cursor-text"
@@ -106,14 +107,14 @@
 	}
 
 	section > a {
-		background-color: #fefefe;
+		/* background-color: #fefefe; */
 		text-align: center;
 		height: 100%;
 		position: relative;
 		text-decoration: none;
 		color: black;
-    font-family: var(--font-notes);
-    background: var(--color-postit);
+    /* font-family: var(--font-notes); */
+    /* background: var(--color-postit); */
 	}
 
 	.about-container {
