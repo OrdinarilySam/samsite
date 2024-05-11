@@ -23,7 +23,7 @@
     transform: rotate(var(--postit-rotation));
     box-shadow: 0rem 2rem 1.5rem rgba(0, 0, 0, 0.04);
     transition: box-shadow 0.3s ease-in-out;
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
     margin: 0;

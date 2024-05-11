@@ -4,13 +4,13 @@
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
-	const fullPos = 0.35;
-	const halfPos = 0.3;
+	const fullPos = 0.50;
+	const halfPos = 0.50;
 	const blinkInterval = 375;
 	const blinkTransition = 0.15;
 
-  const leftRot = 7;
-  const rightRot = -4;
+	const leftRot = 7;
+	const rightRot = -4;
 
 	let aboutDiv: HTMLElement;
 
@@ -28,7 +28,7 @@
 
 	function moveCursor(x: number, y: number, rot: number) {
 		if (timeout) clearTimeout(timeout);
-		cursor.set({ x: x, y: y, rot: rot});
+		cursor.set({ x: x, y: y, rot: rot });
 		isVisible = true;
 		isRunning = false;
 		timeout = setTimeout(() => {
@@ -37,22 +37,32 @@
 		}, 500);
 	}
 
-	function handleEnter(event: MouseEvent, fromLeft: number, rotation: number) {
-		if (event == null || event.target == null) return;
-		const target = event.target as HTMLElement;
-		calculatePosition(target, fromLeft, rotation);
-	}
-
-	function calculatePosition(target: HTMLElement, fromLeft: number, rotation: number) {
-		const width = target.offsetWidth;
+  function calculateHalfPos(event: MouseEvent, rotation: number) {
+    if (event == null || event.target == null) return; 
+    const target = event.target as HTMLElement;
+    const width = target.offsetWidth;
 		const height = target.offsetHeight;
-		const x = target.offsetLeft + width * fromLeft;
+		const x = target.offsetLeft - width * halfPos * 0.5;
 		const y = target.offsetTop + height / 2;
-		moveCursor(x, y, rotation);
-	}
+    moveCursor(x, y, rotation)
+  }
+
+  function calculateFullPos(event: MouseEvent, rotation: number) {
+    if (event == null || event.target == null) return; 
+    const target = event.target as HTMLElement;
+    const width = target.offsetWidth;
+		const height = target.offsetHeight;
+		const x = target.offsetLeft + width * fullPos;
+		const y = target.offsetTop + height / 2;
+    moveCursor(x, y, rotation)
+  }
 
 	onMount(() => {
-		calculatePosition(aboutDiv, fullPos, 0);
+    const width = aboutDiv.offsetWidth;
+		const height = aboutDiv.offsetHeight;
+		const x = aboutDiv.offsetLeft + width * fullPos;
+		const y = aboutDiv.offsetTop + height / 2;
+    moveCursor(x, y, 0)
 		isRunning = false;
 	});
 
@@ -66,19 +76,25 @@
 	<meta name="samsite" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<a
-		class="about-container"
-		bind:this={aboutDiv}
-		on:mouseenter={(event) => handleEnter(event, fullPos, 0)}
-		href="/about"
-	>
-		<p>Hi,</p>
-		<p>'m Sam</p>
-	</a>
+<section >
+	<div class="about-container" >
+		<a
+      class="about-anchor"
+			bind:this={aboutDiv}
+			on:mouseenter={(event) => calculateFullPos(event, 0)}
+			href="/about"
+		>
+      <Postit rotation="0deg">
+        <p>Hi,</p>
+      </Postit>
+      <Postit rotation="-5deg">
+        <p>'m Sam</p>
+      </Postit>
+		</a>
+	</div>
 
 	<div class="code-container">
-		<a href="/code" on:mouseenter={(event) => handleEnter(event, halfPos, leftRot)}>
+		<a href="/code" on:mouseenter={(event) => calculateHalfPos(event, leftRot)}>
 			<Postit rotation="{leftRot}deg">
 				<p>Write Code</p>
 			</Postit>
@@ -86,7 +102,7 @@
 	</div>
 
 	<div class="photos-container">
-		<a on:mouseenter={(event) => handleEnter(event, halfPos, rightRot)} href="/photos">
+		<a on:mouseenter={(event) => calculateHalfPos(event, rightRot)} href="/photos">
 			<Postit rotation="{rightRot}deg">
 				<p>Take Photos</p>
 			</Postit>
@@ -116,7 +132,8 @@
 		height: 100%;
 		width: 100%;
 		font-size: 4rem;
-    justify-items: center;
+		justify-items: center;
+    text-align: center;
 	}
 
 	a {
@@ -132,20 +149,35 @@
 		position: absolute;
 		right: 0;
 		align-self: center;
-		width: 50%;
+		width: 60%;
+    font-size: 5rem;
 	}
+
+  .about-container p {
+    font-size: 7rem;
+    left: 0.5rem;
+    width: 100%;
+  }
+
+  .about-anchor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
 
 	.about-container {
 		grid-column: 1 / -1;
+    width: 100%;
 	}
 
 	.code-container {
 		grid-column: 1 / 2;
-    margin: 0;
+		margin: 0;
 	}
 
 	.photos-container {
 		grid-column: 2 / 3;
-    margin: 0;
+		margin: 0;
 	}
 </style>
