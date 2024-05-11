@@ -1,13 +1,16 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-  import Postit from './Postit.svelte';
+	import Postit from './Postit.svelte';
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	const fullPos = 0.35;
-	const halfPos = 0.2;
+	const halfPos = 0.3;
 	const blinkInterval = 375;
 	const blinkTransition = 0.15;
+
+  const leftRot = 7;
+  const rightRot = -4;
 
 	let aboutDiv: HTMLElement;
 
@@ -16,16 +19,16 @@
 	let isRunning: boolean = false;
 
 	let cursor = spring(
-		{ x: 0, y: 0 },
+		{ x: 0, y: 0, rot: 0 },
 		{
 			stiffness: 0.07,
 			damping: 0.45
 		}
 	);
 
-	function moveCursor(x: number, y: number) {
+	function moveCursor(x: number, y: number, rot: number) {
 		if (timeout) clearTimeout(timeout);
-		cursor.set({ x: x, y: y });
+		cursor.set({ x: x, y: y, rot: rot});
 		isVisible = true;
 		isRunning = false;
 		timeout = setTimeout(() => {
@@ -34,22 +37,22 @@
 		}, 500);
 	}
 
-	function handleEnter(event: MouseEvent, fromLeft: number) {
+	function handleEnter(event: MouseEvent, fromLeft: number, rotation: number) {
 		if (event == null || event.target == null) return;
 		const target = event.target as HTMLElement;
-		calculatePosition(target, fromLeft);
+		calculatePosition(target, fromLeft, rotation);
 	}
 
-	function calculatePosition(target: HTMLElement, fromLeft: number) {
+	function calculatePosition(target: HTMLElement, fromLeft: number, rotation: number) {
 		const width = target.offsetWidth;
 		const height = target.offsetHeight;
 		const x = target.offsetLeft + width * fromLeft;
 		const y = target.offsetTop + height / 2;
-		moveCursor(x, y);
+		moveCursor(x, y, rotation);
 	}
 
 	onMount(() => {
-		calculatePosition(aboutDiv, fullPos);
+		calculatePosition(aboutDiv, fullPos, 0);
 		isRunning = false;
 	});
 
@@ -67,20 +70,28 @@
 	<a
 		class="about-container"
 		bind:this={aboutDiv}
-		on:mouseenter={(event) => handleEnter(event, fullPos)}
+		on:mouseenter={(event) => handleEnter(event, fullPos, 0)}
 		href="/about"
 	>
 		<p>Hi,</p>
 		<p>'m Sam</p>
 	</a>
 
-	<a class="code-container" on:mouseenter={(event) => handleEnter(event, halfPos)} href="/code">
-    <Postit message="Write Code" rotation="7deg" />
-	</a>
+	<div class="code-container">
+		<a href="/code" on:mouseenter={(event) => handleEnter(event, halfPos, leftRot)}>
+			<Postit rotation="{leftRot}deg">
+				<p>Write Code</p>
+			</Postit>
+		</a>
+	</div>
 
-	<a class="photos-container" on:mouseenter={(event) => handleEnter(event, halfPos)} href="/photos">
-    <Postit message="Take Photos" rotation="-4deg" />
-	</a>
+	<div class="photos-container">
+		<a on:mouseenter={(event) => handleEnter(event, halfPos, rightRot)} href="/photos">
+			<Postit rotation="{rightRot}deg">
+				<p>Take Photos</p>
+			</Postit>
+		</a>
+	</div>
 	<Icon
 		icon="mdi:cursor-text"
 		width="4em"
@@ -90,6 +101,7 @@
       pointer-events: none; 
       top: {$cursor.y - 128}px; 
       left: {$cursor.x - 128}px;
+      transform: rotate({$cursor.rot}deg);
       opacity: {isVisible ? '1' : '0'};
       transition: opacity {blinkTransition}s;"
 	/>
@@ -104,17 +116,23 @@
 		height: 100%;
 		width: 100%;
 		font-size: 4rem;
+    justify-items: center;
 	}
 
-	section > a {
-		/* background-color: #fefefe; */
+	a {
 		text-align: center;
 		height: 100%;
 		position: relative;
 		text-decoration: none;
 		color: black;
-    /* font-family: var(--font-notes); */
-    /* background: var(--color-postit); */
+	}
+
+	p {
+		margin: 0;
+		position: absolute;
+		right: 0;
+		align-self: center;
+		width: 50%;
 	}
 
 	.about-container {
@@ -123,9 +141,11 @@
 
 	.code-container {
 		grid-column: 1 / 2;
+    margin: 0;
 	}
 
 	.photos-container {
 		grid-column: 2 / 3;
+    margin: 0;
 	}
 </style>

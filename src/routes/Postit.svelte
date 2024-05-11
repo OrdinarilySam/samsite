@@ -3,8 +3,6 @@
   export let width = "20rem";
   export let rotation = "0deg";
 
-  export let message: string = "";
-
 </script>
 
 <div style="
@@ -12,7 +10,7 @@
     --postit-width: {width};
     --postit-rotation: {rotation};
   ">
-  <p>{message}</p>
+  <slot />
 </div>
 
 <style>
@@ -25,8 +23,9 @@
     transform: rotate(var(--postit-rotation));
     box-shadow: 0rem 2rem 1.5rem rgba(0, 0, 0, 0.04);
     transition: box-shadow 0.3s ease-in-out;
-  }
-  div > p {
+    position: relative;
+    display: flex;
+    align-items: center;
     margin: 0;
   }
   div:hover {
