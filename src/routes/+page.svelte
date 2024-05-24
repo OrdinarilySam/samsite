@@ -9,6 +9,8 @@
 	const blinkInterval = 375;
 	const blinkTransition = 0.15;
 
+  const cursorSize = 3;
+
 	const leftRot = 7;
 	const rightRot = -4;
 
@@ -110,13 +112,14 @@
 	</div>
 	<Icon
 		icon="mdi:cursor-text"
-		width="4em"
-		height="4em"
+		width="{cursorSize}em"
+		height="{cursorSize}em"
 		style="
       position: absolute; 
       pointer-events: none; 
-      top: {$cursor.y - 128}px; 
-      left: {$cursor.x - 128}px;
+      color: var(--color-text);
+      top: calc({$cursor.y}px - {cursorSize/2}em); 
+      left: calc({$cursor.x}px - {cursorSize/2}em);
       transform: rotate({$cursor.rot}deg);
       opacity: {isVisible ? '1' : '0'};
       transition: opacity {blinkTransition}s;"
@@ -141,7 +144,7 @@
 		height: 100%;
 		position: relative;
 		text-decoration: none;
-		color: black;
+		color: var(--color-text);
 	}
 
 	p {
