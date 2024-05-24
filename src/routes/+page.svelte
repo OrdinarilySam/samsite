@@ -9,7 +9,7 @@
   const blinkTransition = 0.15;
 
 	let aboutDiv: HTMLElement;
-  let timeout: number = NaN;
+  	let timeout: number = NaN;
 
 	let isVisible: boolean;
 	let isRunning: boolean = false;
