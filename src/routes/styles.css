@@ -1,5 +1,9 @@
 @import '@fontsource/fira-mono';
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --color-manila: #F8F5E1;
   --color-postit: #EEEB49B0;
@@ -20,11 +24,13 @@
 	color: var(--color-text);
 }
 
+
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
+	/* background-attachment: fixed; */
+	background-color: var(--color-manila);
+  background: linear-gradient(to bottom, var(--color-bg-1) 10%, var(--color-manila) 10%);
 	background-size: 100vw 100vh;
 	/* background-image: radial-gradient( */
 	/* 		50% 50% at 50% 50%, */

@@ -14,63 +14,80 @@
 
 </script>
 
+<svelte:head>
+  <title>About - {currentIndex === 0 ? 'Bio' : 'Resume'}</title>
+</svelte:head>
 
 <nav>
-  <button class="{currentIndex === 0 ? 'active' : currentIndex < 0 ? 'left' : 'right'}" on:click="{(_event) => handleSwitch(0)}">
-    Bio
+  <button class="{currentIndex === 0 ? 'active' : 'inactive'}" on:click="{(_event) => handleSwitch(0)}">
+    <div class="label bio">
+      Bio
+    </div>
+    <div class="claws"></div>
   </button>
-  <button class="{currentIndex === 1 ? 'active' : currentIndex < 1 ? 'left' : 'right'}" on:click="{(_event) => handleSwitch(1)}">
-    Resume
+  <button class="{currentIndex === 1 ? 'active' : 'inactive'}" on:click="{(_event) => handleSwitch(1)}">
+    <div class="label resume">
+      Resume
+    </div>
+    <div class="claws"></div>
   </button>
 </nav>
 
 
 <style>
-
   * {
     box-sizing: border-box;
   }
-
   nav {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    text-align: center;
-    position: relative; 
+    width: 100%;
+    height: 2em;
   }
 
   button {
+    --border-size: 4px;
+    width: 50%;
+    background: rgba(240, 240, 255, 0.45);
+    border: var(--border-size) outset rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
-    text-decoration: none;
-    color: black;
-    padding: 0.7rem;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
-    background-color: var(--color-manila);
-    font-family: var(--font-nav);
-    font-size: 2rem;
     position: relative;
-    line-height: 1em;
-    color: rgba(0.1, 0.1, 0.1, 0.7);
   }
 
-  .active {
-    box-shadow: none;
-    border-bottom: none;
+  div {
+    width: 90%;
   }
 
-  .left {
-    box-shadow: 
-      inset 0.5rem -0.1rem 5px 0px rgba(0, 0, 0, 0.1),
-      inset 0 -0.2rem 5px 0px rgba(0, 0, 0, 0.1);
+  .label {
+    font-size: 1.5em;
+    margin: 0 auto;
+    width: 75%;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
   }
 
-  .right {
-    box-shadow: 
-      inset -0.5rem -0.1rem 5px 0px rgba(0, 0, 0, 0.1),
-      inset 0 -0.2rem 5px 0px rgba(0, 0, 0, 0.1);
+  .bio {
+    background: rgba(110, 200, 247, 0.7);
+  }
+
+  .resume {
+    background: rgba(181, 247, 110, 0.7);
+  }
+
+  .active > .claws {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: calc(-1em - var(--border-size));
+    left: 0;
+    width: 100%;
+    height: 1em;
+    border-top: dashed 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .inactive {
+    border: var(--border-size) outset rgba(0, 0, 0, 0.25);
+    background: rgba(240, 240, 255, 0.25);
   }
 
 </style>

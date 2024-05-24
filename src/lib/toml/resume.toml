@@ -1,0 +1,22 @@
+[About]
+name = "Samuel Martin"
+location = "Minnesota"
+phone = "(###) ###-####"
+email = "ordinarilysam"
+links = [
+  ""
+]
+
+[Education."University of Minnesota"]
+
+[Skills]
+
+[Experience]
+
+[[Projects]]
+name = "samsite"
+
+[[Projects]]
+name = "autochimein"
+
+

@@ -23,3 +23,11 @@
 
 </section>
 
+<style>
+  section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1em;
+    min-height: 75vh;
+    margin-bottom: 1em;
+  }
+</style>
