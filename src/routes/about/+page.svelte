@@ -28,6 +28,7 @@
     background: rgba(255, 255, 255, 0.95);
     padding: 1em;
     min-height: 75vh;
+    height: 100%;
     margin-bottom: 1em;
   }
 </style>
