@@ -9,7 +9,7 @@
 	const blinkInterval = 375;
 	const blinkTransition = 0.15;
 
-  const cursorSize = 3;
+  const cursorSize = 2;
 
 	const leftRot = 7;
 	const rightRot = -4;
