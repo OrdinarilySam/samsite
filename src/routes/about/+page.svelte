@@ -26,9 +26,11 @@
 <style>
   section {
     background: rgba(255, 255, 255, 0.95);
+    background: var(--color-paper);
     padding: 1em;
     min-height: 75vh;
     height: 100%;
     margin-bottom: 1em;
+    box-shadow: 3px 3px 4em 3px rgba(0, 0, 0, 0.1);
   }
 </style>

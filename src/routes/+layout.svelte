@@ -36,6 +36,7 @@
 		margin: 0 auto;
 		box-sizing: border-box;
     background: var(--color-manila);
+    background-image: linear-gradient(var(--color-manila), var(--color-manila-saturated));
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
 	}
