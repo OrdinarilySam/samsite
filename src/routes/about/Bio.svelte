@@ -32,21 +32,24 @@
 	<div class="socials"></div>
 	<div class="text">
 		<h1>Sam Martin</h1>
-		<p>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci maxime inventore neque quis
-			quaerat ex autem natus non sunt? Provident, cupiditate explicabo totam velit necessitatibus
-			quos repellendus autem perspiciatis! Temporibus. Neque dignissimos illum aperiam nam libero
-			impedit temporibus deserunt? Dolores corrupti voluptatibus eveniet velit id nulla,
-			consequuntur adipisci dolore quaerat rerum nostrum tenetur sed maiores voluptatum placeat
-			provident, praesentium aut! Reiciendis explicabo provident impedit necessitatibus ipsum odio?
-			Repellat voluptas nihil enim dolore adipisci libero dolorem iure suscipit. Pariatur ea enim
-			ipsa! Eligendi accusantium pariatur, placeat ea ipsum repellendus cum laboriosam. Recusandae a
-			fugiat minima labore veritatis, sit eum veniam ut voluptatibus quia corrupti ipsum earum
-			exercitationem praesentium modi ipsa ratione. Neque et alias nisi corrupti eos provident qui
-			fugiat velit. In corporis aspernatur possimus perferendis iure dolorum! Debitis vitae eligendi
-			cumque. Deleniti doloremque aspernatur debitis magnam alias soluta animi, quisquam culpa
-			voluptatem assumenda, iusto id nisi maxime illum corrupti rerum.
-		</p>
+		<h2>
+      <span>
+        Programmer, 
+      </span>
+      <span>
+        Photographer, 
+      </span>
+      <span>
+        Hiker
+      </span>
+		</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in molestiae, quam aliquid laborum rerum consequatur quod, cum, culpa sapiente doloribus. Nulla quod nihil iure fuga culpa molestias labore totam.
+      Consectetur, officia! Saepe cupiditate hic, consectetur nulla facere dolor ipsa deserunt tempore illo quibusdam, ab quia, in culpa nam cumque est nobis nisi vero reiciendis explicabo voluptates omnis. Repellat, facilis.
+      Sunt maiores nisi odit reiciendis nam. Reiciendis fugit quos officiis blanditiis beatae maiores velit architecto, alias recusandae. Dolorum mollitia ab inventore numquam illo maiores, aliquid architecto, illum eveniet impedit doloribus!
+      Qui quasi possimus similique hic reprehenderit accusamus cupiditate voluptatibus in! Accusamus at excepturi qui explicabo pariatur numquam repellat corporis dolorem libero expedita! Unde esse tenetur vel sapiente provident autem consequatur!
+      Commodi laudantium, sit quas dolorum dolor harum magnam cupiditate enim ad tenetur cumque necessitatibus rem hic provident similique ullam corporis quis ducimus, blanditiis illo molestiae maxime ex. Tenetur, veritatis ex!
+    </p>
 	</div>
 </div>
 
@@ -97,8 +100,23 @@
 	}
 
 	.text > h1 {
-		font-size: 2rem;
+		font-size: 3rem;
+    font-weight: boldest;
+    margin-bottom: 0;
 	}
+  
+  .text > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  .text > h2 > span:hover {
+    /* color: blue; */
+    background: linear-gradient(45deg, #11aa11, #114455);
+    background-clip: text;
+    color: transparent;
+  }
 
 	.socials {
 		grid-area: socials;
