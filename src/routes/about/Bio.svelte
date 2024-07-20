@@ -3,7 +3,10 @@
 	let polaroid: HTMLDivElement;
 	const baseRotation = 10;
 	let rotateLeft = true;
-	function rotatePolaroid() {
+	function rotatePolaroid(event: Event) {
+    if (event instanceof KeyboardEvent && event.code !== "Space") {
+      return;
+    }
 		let rotation = rotateLeft ? 360 + baseRotation : baseRotation;
 		polaroid.style.transform = `rotate(${rotation}deg)`;
 		rotateLeft = !rotateLeft;
@@ -17,7 +20,7 @@
 			bind:this={polaroid}
 			on:click={rotatePolaroid}
 			role="button"
-			aria-label="spins the headshot"
+			aria-label="press space to spin the headshot"
 			tabindex="0"
 			on:keydown={rotatePolaroid}
 		>
