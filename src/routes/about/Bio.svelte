@@ -29,7 +29,9 @@
 			alt="Thumbtack/pushpin 2 clip art"
 		/>
 	</div>
-	<div class="socials"></div>
+	<div class="socials">
+    
+  </div>
 	<div class="text">
 		<h1>Sam Martin</h1>
 		<h2>
@@ -56,10 +58,10 @@
 <style>
 	.pin {
 		position: absolute;
-		height: 40px;
-		width: 40px;
+		height: 50px;
+		width: 50px;
 		top: 2rem;
-		right: 7.5rem;
+		right: 8rem;
 	}
 
 	.image {
@@ -72,8 +74,8 @@
 		top: 1.5rem;
 		right: 3rem;
 		transform: rotate(10deg);
-		width: 200px;
-		height: 230px;
+		width: 240px;
+		height: 276px;
 		border: 1px solid black;
 		background: white;
 		padding: 13px;
@@ -88,7 +90,7 @@
 	.container {
 		grid-template-areas: 'text picture' 'text socials';
 		grid-template-columns: 3fr 2fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 2fr 1fr;
 		display: grid;
 		height: 100%;
 		width: 100%;
