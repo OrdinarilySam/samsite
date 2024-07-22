@@ -5,9 +5,9 @@
 	const baseRotation = 10;
 	let rotateLeft = true;
 	function rotatePolaroid(event: Event) {
-    if (event instanceof KeyboardEvent && event.code !== "Space") {
-      return;
-    }
+		if (event instanceof KeyboardEvent && event.code !== 'Space') {
+			return;
+		}
 		let rotation = rotateLeft ? 360 + baseRotation : baseRotation;
 		polaroid.style.transform = `rotate(${rotation}deg)`;
 		rotateLeft = !rotateLeft;
@@ -15,6 +15,32 @@
 </script>
 
 <div class="container">
+	<div class="text">
+		<h1>Sam Martin</h1>
+		<Typewriter>
+			<li>Programmer</li>
+			<li>Photographer</li>
+			<li>Hiker</li>
+		</Typewriter>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in molestiae, quam aliquid
+			laborum rerum consequatur quod, cum, culpa sapiente doloribus. Nulla quod nihil iure fuga
+			culpa molestias labore totam. Consectetur, officia! Saepe cupiditate hic, consectetur nulla
+			facere dolor ipsa deserunt tempore illo quibusdam, ab quia, in culpa nam cumque est nobis nisi
+			vero reiciendis explicabo voluptates omnis. Repellat, facilis. Sunt maiores nisi odit
+			reiciendis nam. Reiciendis fugit quos officiis blanditiis beatae maiores velit architecto,
+			alias recusandae. Dolorum mollitia ab inventore numquam illo maiores, aliquid architecto,
+			illum eveniet impedit doloribus! Qui quasi possimus similique hic reprehenderit accusamus
+			cupiditate voluptatibus in! Accusamus at excepturi qui explicabo pariatur numquam repellat
+			corporis dolorem libero expedita! Unde esse tenetur vel sapiente provident autem consequatur!
+			Commodi laudantium, sit quas dolorum dolor harum magnam cupiditate enim ad tenetur cumque
+			necessitatibus rem hic provident similique ullam corporis quis ducimus, blanditiis illo
+			molestiae maxime ex. Tenetur, veritatis ex!
+		</p>
+	</div>
+
+	<div class="socials"></div>
+
 	<div class="image">
 		<div
 			class="headshot-container"
@@ -32,24 +58,6 @@
 			src="http://www.clker.com/cliparts/B/V/P/X/Z/e/thumbtack-pushpin-2-th.png"
 			alt="Thumbtack/pushpin 2 clip art"
 		/>
-	</div>
-	<div class="socials">
-    
-  </div>
-	<div class="text">
-		<h1>Sam Martin</h1>
-    <Typewriter>
-      <li>Programmer</li>
-      <li>Photographer</li>
-      <li>Hiker</li>
-    </Typewriter>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in molestiae, quam aliquid laborum rerum consequatur quod, cum, culpa sapiente doloribus. Nulla quod nihil iure fuga culpa molestias labore totam.
-      Consectetur, officia! Saepe cupiditate hic, consectetur nulla facere dolor ipsa deserunt tempore illo quibusdam, ab quia, in culpa nam cumque est nobis nisi vero reiciendis explicabo voluptates omnis. Repellat, facilis.
-      Sunt maiores nisi odit reiciendis nam. Reiciendis fugit quos officiis blanditiis beatae maiores velit architecto, alias recusandae. Dolorum mollitia ab inventore numquam illo maiores, aliquid architecto, illum eveniet impedit doloribus!
-      Qui quasi possimus similique hic reprehenderit accusamus cupiditate voluptatibus in! Accusamus at excepturi qui explicabo pariatur numquam repellat corporis dolorem libero expedita! Unde esse tenetur vel sapiente provident autem consequatur!
-      Commodi laudantium, sit quas dolorum dolor harum magnam cupiditate enim ad tenetur cumque necessitatibus rem hic provident similique ullam corporis quis ducimus, blanditiis illo molestiae maxime ex. Tenetur, veritatis ex!
-    </p>
 	</div>
 </div>
 
@@ -101,8 +109,9 @@
 
 	.text > h1 {
 		font-size: 3rem;
-    font-weight: boldest;
-    margin-bottom: 0;
+		font-weight: boldest;
+		margin-bottom: 0;
+		margin-top: 0.5rem;
 	}
 
 	.socials {
