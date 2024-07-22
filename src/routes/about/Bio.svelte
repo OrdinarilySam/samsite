@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Headshot from '$lib/images/Headshot.jpeg';
+	import Typewriter from './Typewriter.svelte';
 	let polaroid: HTMLDivElement;
 	const baseRotation = 10;
 	let rotateLeft = true;
@@ -37,17 +38,11 @@
   </div>
 	<div class="text">
 		<h1>Sam Martin</h1>
-		<h2>
-      <span>
-        Programmer, 
-      </span>
-      <span>
-        Photographer, 
-      </span>
-      <span>
-        Hiker
-      </span>
-		</h2>
+    <Typewriter>
+      <li>Programmer</li>
+      <li>Photographer</li>
+      <li>Hiker</li>
+    </Typewriter>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in molestiae, quam aliquid laborum rerum consequatur quod, cum, culpa sapiente doloribus. Nulla quod nihil iure fuga culpa molestias labore totam.
       Consectetur, officia! Saepe cupiditate hic, consectetur nulla facere dolor ipsa deserunt tempore illo quibusdam, ab quia, in culpa nam cumque est nobis nisi vero reiciendis explicabo voluptates omnis. Repellat, facilis.
