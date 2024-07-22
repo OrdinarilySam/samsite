@@ -104,19 +104,6 @@
     font-weight: boldest;
     margin-bottom: 0;
 	}
-  
-  .text > h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 0;
-  }
-
-  .text > h2 > span:hover {
-    /* color: blue; */
-    background: linear-gradient(45deg, #11aa11, #114455);
-    background-clip: text;
-    color: transparent;
-  }
 
 	.socials {
 		grid-area: socials;

@@ -4,43 +4,44 @@
   let list: HTMLCollection;
   let wordIndex = 0;
   let charIndex = 0;
-  let timeout = 20;
-  let pauseTimer = 20;
+  export let timeout = 2000;
+  export let speed = 75;
+  let pauseTimer = timeout;
 
   let curText = "";
 
   function startTyping() {
-    curText = getTextFromNumbers()
-  }
-
-  function getTextFromNumbers(): string {
     let fulltext = list[wordIndex].textContent;
     if (!fulltext) {
-      return "something broke"
+      return ""
     }
+
     let lettersShown = fulltext.length - Math.abs(charIndex - fulltext.length)
+
     if (lettersShown < 0) {
       wordIndex = (wordIndex + 1) % list.length
-      charIndex = 0
+      charIndex = 1
+      return;
     }
+
     if (lettersShown === fulltext.length && pauseTimer > 0) {
-      pauseTimer -= 1
+      pauseTimer -= speed
     } else {
       charIndex++;
       pauseTimer = timeout;
     }
-    return fulltext.substring(0, lettersShown)
+
+    curText = fulltext.substring(0, lettersShown)
   }
 
   onMount(() => {
     list = parent.children;
-    console.log(list[0].textContent)
-    const interval = setInterval(
-      startTyping, 100 
+    const typingInterval = setInterval(
+      startTyping, speed
     )
 
     return () => {
-      clearInterval(interval)
+      clearInterval(typingInterval)
     }
   })
 
