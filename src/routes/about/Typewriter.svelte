@@ -85,9 +85,9 @@
 
 <style>
 	.text {
-		font-size: 1.5em;
-		height: 1.5em;
-		margin-bottom: 0;
+		font-size: 2.5rem;
+		height: 2.5rem;
+		margin-bottom: 0.25rem;
 		margin-top: 0;
 		cursor: pointer;
 	}

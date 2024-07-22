@@ -18,25 +18,41 @@
 	<div class="text">
 		<h1>Sam Martin</h1>
 		<Typewriter>
-			<li>Programmer</li>
+			<li>Developer</li>
 			<li>Photographer</li>
 			<li>Hiker</li>
 		</Typewriter>
+    <em>
+      (Click the text to pause the typing animation)
+    </em>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in molestiae, quam aliquid
-			laborum rerum consequatur quod, cum, culpa sapiente doloribus. Nulla quod nihil iure fuga
-			culpa molestias labore totam. Consectetur, officia! Saepe cupiditate hic, consectetur nulla
-			facere dolor ipsa deserunt tempore illo quibusdam, ab quia, in culpa nam cumque est nobis nisi
-			vero reiciendis explicabo voluptates omnis. Repellat, facilis. Sunt maiores nisi odit
-			reiciendis nam. Reiciendis fugit quos officiis blanditiis beatae maiores velit architecto,
-			alias recusandae. Dolorum mollitia ab inventore numquam illo maiores, aliquid architecto,
-			illum eveniet impedit doloribus! Qui quasi possimus similique hic reprehenderit accusamus
-			cupiditate voluptatibus in! Accusamus at excepturi qui explicabo pariatur numquam repellat
-			corporis dolorem libero expedita! Unde esse tenetur vel sapiente provident autem consequatur!
-			Commodi laudantium, sit quas dolorum dolor harum magnam cupiditate enim ad tenetur cumque
-			necessitatibus rem hic provident similique ullam corporis quis ducimus, blanditiis illo
-			molestiae maxime ex. Tenetur, veritatis ex!
-		</p>
+      I'm currently going into my senior year at the University of Minnesota for a Bachelor's of Science in Computer Science.
+      I've learned a lot there in all topics of Computer Science, but more of a focus in computer security.
+      A couple of my favorite topics from the degree, aside from computer security, are networking, graphics, and front-end design.
+    </p>
+    <p>
+      I have experience doing full-stack development at a supply chain management company called SPS Commerce.
+      I have learned many things about production level development from there, including some developer operations
+      and continuous integration/continuous delivery.
+    </p>
+    <p>
+      While I have experience in many languages and frameworks, you'll mostly find me working with Python and Typescript.
+      I've recently learned Go, and have really enjoyed the syntax and straight forward approach to most things.
+      For front-end development, I've fallen in love with Svelte, though I have experience with React as well.
+    </p>
+    <p>
+      I've worked on a number of projects (<a href="/code">more information here</a>), but the one I'd like to highlight
+      is an implementation of the AES encryption algorithm written in Rust.
+      This was done entirely from the official NIST document outlining how the algorithm works
+      and was my first project in Rust.
+      It was very rewarding watching the encryption and decryption actually work for the first time
+      and I plan to expand upon this project in the near future.
+    </p>
+    <p>
+      When I'm not programming, I can be found hanging out with friends, taking pictures, going on hikes, and playing videogames.
+      I'm also an avid scuba diver, and love the water in general. 
+      As far as photography goes, I love taking pictures of wildlife, landscapes, and the night sky.
+    </p>
 	</div>
 
 	<div class="socials"></div>
@@ -108,7 +124,7 @@
 	}
 
 	.text > h1 {
-		font-size: 3rem;
+		font-size: 4rem;
 		font-weight: boldest;
 		margin-bottom: 0;
 		margin-top: 0.5rem;
@@ -117,4 +133,9 @@
 	.socials {
 		grid-area: socials;
 	}
+
+  em {
+    color: var(--color-text-hint);
+    font-size: 0.8rem;
+  }
 </style>
