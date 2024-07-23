@@ -23,6 +23,7 @@
 	--color-theme-2: #4075a6;
 	--color-text: rgba(0, 0, 0, 0.7);
   --color-text-hint: rgba(0, 0, 0, 0.5);
+  --color-paper-lines: #b3b3d388;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
