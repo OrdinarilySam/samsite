@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Headshot from '$lib/images/Headshot.jpeg';
 	import Typewriter from './Typewriter.svelte';
+  import Socials from './Socials.svelte'
 	let polaroid: HTMLDivElement;
 	const baseRotation = 10;
 	let rotateLeft = true;
@@ -55,7 +56,9 @@
     </p>
 	</div>
 
-	<div class="socials"></div>
+	<div class="socials">
+    <Socials />
+  </div>
 
 	<div class="image">
 		<div
