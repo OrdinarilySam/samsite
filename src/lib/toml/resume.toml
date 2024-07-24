@@ -2,21 +2,72 @@
 name = "Samuel Martin"
 location = "Minnesota"
 phone = "(###) ###-####"
-email = "ordinarilysam"
+email = "ordinarilysam@gmail.com"
 links = [
-  ""
+  "ordinarilysam.com"
 ]
 
 [Education."University of Minnesota"]
+start-date = "Sep 2022"
+end-date = "Present"
+location = "Minneapolis, MN"
+degree = "Bachelor's of Science, Computer Science"
+gpa = "3.936"
+honors = "Dean's List"
 
 [Skills]
+languages = [
+  "Python", "JavaScript", 
+  "TypeScript", "Java", 
+  "C", "OCaml", 
+  "HTML/CSS", "Go",
+  "Rust"
+]
+frameworks = [
+  "React", "Svelte", "Django"
+]
+tools = [
+  "Git", "GitHub", "Linux", "SSH", "Vim", "VSCode",
+  "Azure DevOps", "Jira"
+]
 
-[Experience]
+[[Experience]]
+position = "Software Engineer Intern"
+company = "SPS Commerce"
+start-date = "Jun 2024"
+end-date = "Aug 2024"
+about = [
+  "Some points here",
+  "probably around three",
+  "about what I did"
+]
+
+[[Experience]]
+position = "Undergraduate Researcher"
+company = "University of Minnesota"
+start-date = "Aug 2023"
+end-date = "Mar 2024"
+about = [
+  "Developing algorithms that will allow a solar, transformable UAV to stably transition between states mid-air.",
+  "Collaborating closely with a small team, ensuring effective communication and alignment on research objectives.",
+  "Implemented an algorithm that resulted in stable simulated flight for one of the flight states.",
+]
 
 [[Projects]]
-name = "samsite"
+name = "Auto ChimeIn"
+tools = [
+  "Firefox", "JS", "HTML/CSS"
+]
+about = "Firefox extension that automatically selects correct responses to ChimeIn questions and sends updates to a Discord webhook. Modifies a WebSocket API function to intercept pings."
 
 [[Projects]]
-name = "autochimein"
+name = "Lock Talk"
+tools = [
+  "Rust"
+]
+about = "An implementation of the AES encryption algorithm. Implemented from the algorithm's official NIST documentation in Rust."
+
+[[Projects]]
+name = "Deadline Divider"
 
 
