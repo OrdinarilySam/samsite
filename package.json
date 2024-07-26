@@ -32,5 +32,8 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"toml": "^3.0.0"
+	}
 }
