@@ -12,34 +12,35 @@ async function getResume(): Promise<ResumeT> {
 
 type ResumeT = {
   About: {
-    name: string,
-    location: string,
-    phone: string,
-  },
+    name: string;
+    location: string;
+    phone: string;
+    email: string;
+    website: string;
+  };
   Eduction: {
-    "start-date": string,
-    "end-date": string,
-    location: string,
-    degree: string,
-    gpa: string,
-    honors: string
-  }[],
+    'start-date': string;
+    'end-date': string;
+    location: string;
+    degree: string;
+    gpa: string;
+    honors: string;
+  }[];
   Skills: {
-languages: string[],
-    frameworks: string[],
-    tools: string[]
-  },
+    languages: string[];
+    frameworks: string[];
+    tools: string[];
+  };
   Experience: {
-    "start-date": string,
-    "end-date": string,
-    company: string,
-    position: string,
-    about: string[]
-  }[],
+    'start-date': string;
+    'end-date': string;
+    company: string;
+    position: string;
+    about: string[];
+  }[];
   Projects: {
-    name: string,
-    tools: string[],
-    about: string
-  }[]
-}
-
+    name: string;
+    tools: string[];
+    about: string;
+  }[];
+};

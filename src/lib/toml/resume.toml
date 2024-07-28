@@ -3,6 +3,7 @@ name = "Samuel Martin"
 location = "Minnesota"
 phone = "(###) ###-####"
 email = "ordinarilysam@gmail.com"
+website = "ordinarilysam.com"
 links = [
   "ordinarilysam.com"
 ]
