@@ -18,7 +18,7 @@ type ResumeT = {
     email: string;
     website: string;
   };
-  Eduction: {
+  Education: {
     'start-date': string;
     'end-date': string;
     location: string;

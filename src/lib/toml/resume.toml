@@ -8,7 +8,8 @@ links = [
   "ordinarilysam.com"
 ]
 
-[Education."University of Minnesota"]
+[[Education]]
+school = "University of Minnesota"
 start-date = "Sep 2022"
 end-date = "Present"
 location = "Minneapolis, MN"
