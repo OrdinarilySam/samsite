@@ -40,6 +40,18 @@
 				<p class="left"><em>Honors: </em>{edu.honors}</p>
 			{/each}
 		</section>
+    <section>
+      <h2 class="left title">Skills</h2>
+      <hr />
+      <div class="container">
+        {#each Object.entries(resume.Skills) as [skill, skills]}
+        <div>
+          <h3 class="center">{skill}</h3>
+          <p class="center">{skills.join(", ")}</p>
+        </div>
+        {/each}
+      </div>
+    </section>
 	{/if}
 </div>
 
@@ -99,6 +111,10 @@
 		font-style: normal;
 		font-weight: bold;
 	}
+
+  section {
+    margin-bottom: 1rem;
+  }
 
   @media print {
     @page {

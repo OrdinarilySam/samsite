@@ -18,17 +18,17 @@ gpa = "3.936"
 honors = "Dean's List"
 
 [Skills]
-languages = [
+Languages = [
   "Python", "JavaScript", 
   "TypeScript", "Java", 
   "C", "OCaml", 
   "HTML/CSS", "Go",
   "Rust"
 ]
-frameworks = [
+Frameworks = [
   "React", "Svelte", "Django"
 ]
-tools = [
+Tools = [
   "Git", "GitHub", "Linux", "SSH", "Vim", "VSCode",
   "Azure DevOps", "Jira"
 ]

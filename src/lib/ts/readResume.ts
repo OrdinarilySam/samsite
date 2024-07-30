@@ -27,9 +27,9 @@ type ResumeT = {
     honors: string;
   }[];
   Skills: {
-    languages: string[];
-    frameworks: string[];
-    tools: string[];
+    Languages: string[];
+    Frameworks: string[];
+    Tools: string[];
   };
   Experience: {
     'start-date': string;
