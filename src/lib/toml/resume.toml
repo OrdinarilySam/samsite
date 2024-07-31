@@ -71,5 +71,6 @@ about = "An implementation of the AES encryption algorithm. Implemented from the
 
 [[Projects]]
 name = "Deadline Divider"
-
+tools = ["React", "JS", "moment.js"]
+about = "Website to evenly distribute quantifiable workloads. Built using React with JavaScript. Uses the moment.js library to handle dates."
 

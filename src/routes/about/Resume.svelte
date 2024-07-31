@@ -67,6 +67,17 @@
         </ul>
 			{/each}
 		</section>
+    <section>
+    <h2 class="title">Projects</h2>
+    <hr />
+    {#each resume.Projects as proj}
+      <div class="container canonical small">
+        <h3>{proj.name}</h3>
+        <p>{proj.tools.join(", ")}</p>
+      </div>
+      <p>{proj.about}</p>
+    {/each}
+    </section>
 	{/if}
 </div>
 
@@ -90,15 +101,21 @@
 		grid: 1fr / 1fr 1fr 1fr;
 	}
 
-	.container.canonical > *:nth-child(1),
-	.left {
-		text-align: left;
-	}
+  .container.small {
+    grid: 1fr / 1fr 1fr;
+  }
+
 	.container.canonical > *:nth-child(2),
 	.center {
 		text-align: center;
 	}
-	.container.canonical > *:nth-child(3),
+
+	.container.canonical > *:first-child,
+	.left {
+		text-align: left;
+	}
+
+	.container.canonical > *:last-child,
 	.right {
 		text-align: right;
 	}
