@@ -86,9 +86,26 @@
 		font-family: 'Times New Roman', Times, serif;
 	}
 
+  * {
+    vertical-align: middle;
+  }
+
 	h1 {
 		text-align: center;
 	}
+
+  p {
+    margin: auto 3px;
+  }
+
+  p,
+  li {
+    font-size: 15px;
+  }
+
+  ul {
+    margin: 3px;
+  }
 
 	.about-container {
 		justify-content: space-between;
