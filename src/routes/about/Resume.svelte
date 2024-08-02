@@ -108,9 +108,11 @@
   }
 
 	.about-container {
-		justify-content: space-between;
+		/* justify-content: space-between; */
 		width: 100%;
-		display: flex;
+		/* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
 	}
 
 	.container {
